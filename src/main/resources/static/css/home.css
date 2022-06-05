@@ -5,5 +5,89 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 /* 
     Created on : May 30, 2022, 8:14:33 PM
     Author     : Hillary
+Este import es de googlefonts
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
+/* 
+  * es para que aplique a todoooo 
+*/
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Joan', serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/background.png);
+    background-position:center;
+    /* Hace que la imagen cubra todo el div como tal */
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position:relative;
+}
+
+.navbar{
+    height: 15vh;
+    width: 100%;
+    margin: auto;
+     /* conportamiento dentro del componente, el flex acomoda los elementos en el mismo blo */
+    display: flex;
+    /*Ajusta elementos al centro*/
+    align-items: center;
+}
+
+.logo{
+    width: 160px;
+    /*para que salga el cursor con la manita*/
+    cursor: pointer;
+}
+
+/*si no pongo el punto se aplica esto a todas las etiquetas nav*/
+nav{
+    /*El flex 1 nos dice que tanto crecen los elementos en el contenedor*/
+    flex:1;
+    padding-left: 60px
+}
+
+/*busca siempre que hay una nav con una ul*/
+nav ul li{
+    /*pone el bloque como una linea*/
+    display: inline-block;
+    /*quita las vinetas de la lista*/
+    list-style:none;
+    margin: 0px 20px;
+}
+
+nav ul li a{
+    /*quita el subrayado de los links*/
+    text-decoration: none;
+    color:darkorchid;
+}
+
+.content h1{
+    font-size: 60px;
+    font-weight: bold;
+    margin-top:24px;
+    margin-bottom:15px;
+    color:darkorchid;
+}
+
+.content p{
+    font-size:20px;
+    color:blueviolet;
+}
+
+.myImagen{
+    height: 50%;
+    position: absolute;
+    bottom: 30px;
+    right: 160px;
+    
+}

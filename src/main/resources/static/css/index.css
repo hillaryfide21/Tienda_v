@@ -5,6 +5,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 /* 
     Created on : Jun 1, 2022, 4:56:19 PM
     Author     : Hillary
+Pregunta de entrevista diferencia entre content box y border box
 */
 /*
 Content-box: toma en cuenta contenido borde y padding para el calculo de la caja sumativa
@@ -19,3 +20,48 @@ border-box: modifica valores de contenido para que coincida con ancho y alto
     box-sizing: border-box;
     margin: auto;
 }
+
+/*
+El position:static no se ve afectado por nada sigue el flujo de la pagina web es decir que va de segundo
+*/
+.static{
+    position: static;
+    border:3px solid green;
+    top:400px;
+    left:50px;
+}
+
+/*
+se ve afectado por las medidas y se posiciona en cualquier lado con tal de cumplir con las medidas */
+.relative{
+    position: relative;
+    border:3px solid green;
+    top:400px;
+    left:50px;
+    width: 400px;
+    height: 500px;
+}
+
+/*
+fixed se queda sticky relativo al punto de vista del usuario para el nav bar*/
+
+
+.fixed{
+    position: fixed;
+    border:3px solid green;
+    top:150px;
+    left:50px;
+}
+
+/*
+hace casp a las medidas pero de donde este metido, repeta la jerarquia*/
+
+.absolute{
+    position: absolute;
+    border:3px solid green;
+    top:80px;
+    left:50px;
+    width: 200px;
+    height: 100px;
+}
+
