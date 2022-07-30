@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
  *
  * @author Hillary
  */
+@Service
 public class PaisService implements IPaisService {
     @Autowired
     private PaisRepository paisRepository;

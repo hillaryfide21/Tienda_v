@@ -6,10 +6,14 @@ package com.tienda.service;
 
 import java.util.List;
 import com.tienda.entity.Pais;
+
 /**
  *
  * @author Hillary
  */
 public interface IPaisService {
+
     public List<Pais> listCountry();
+
+    
 }
