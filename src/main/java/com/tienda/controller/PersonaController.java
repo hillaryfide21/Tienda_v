@@ -1,14 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.tienda.controller;
 
 import com.tienda.entity.Pais;
 import com.tienda.entity.Persona;
 import com.tienda.service.IPaisService;
 import com.tienda.service.IPersonaService;
+import com.tienda.service.ReportService;
+import java.io.FileNotFoundException;
 import java.util.List;
+import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +30,12 @@ public class PersonaController {
 
     @Autowired
     private IPaisService paisService;
+    
+    //Reporte
+    @Autowired
+    private ReportService service;
+        
+    //Fin Reporte    
 
     //Metodo Get entonces cuando pongamos esto localhost/persona va a saber que debe hacer eso
     @GetMapping("/persona")
@@ -39,7 +45,7 @@ public class PersonaController {
         List<Persona> listaPersona = personaService.getAllPersona();
 
         //Cada titulo se va a sustituir con eso 
-        model.addAttribute("titulo", "Tabla Personas");
+        model.addAttribute("titulo", "Tabla de clientes - Tienda");
         model.addAttribute("personas", listaPersona);
         return "personas";
     }
@@ -73,6 +79,13 @@ public class PersonaController {
     public String editarPersona (@PathVariable("id") Long idPersona){ /*permite pasar variable al html*/
         personaService.delete(idPersona);
         return "redirect:/persona";
+    }
+    
+    
+    //Generar reporte
+    @GetMapping("/report/{format}")
+    public String generateReport(@PathVariable String format) throws FileNotFoundException, JRException {
+        return service.exportReport(format);
     }
 
           
